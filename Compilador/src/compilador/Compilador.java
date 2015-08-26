@@ -16,7 +16,10 @@ public class Compilador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print("Hola mundo lokillo");
+        System.out.println("Hola mundo lokillo");
+        System.out.println("1");
+        System.out.println("2");
+        System.out.println("3");
     }
     
 }
