@@ -20,6 +20,12 @@ public class Compilador {
         System.out.println("1");
         System.out.println("2");
         System.out.println("3");
+        System.out.println("4 gggdldkfspokdf");
+        int a=0;
+        while(a==4){
+            a++;
+            System.out.println("ciclo:"+a);
+        }
     }
     
 }
