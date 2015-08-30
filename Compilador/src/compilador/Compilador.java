@@ -5,6 +5,8 @@
  */
 package compilador;
 
+import java.io.File;
+import jflex.Main;
 /**
  *
  * @author jona
@@ -16,16 +18,13 @@ public class Compilador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hola mundo lokillo");
-        System.out.println("1");
-        System.out.println("2");
-        System.out.println("3");
-        System.out.println("4 gggdldkfspokdf");
-        int a=0;
-        while(a==4){
-            a++;
-            System.out.println("ciclo:"+a);
-        }
+        String path="E:/Documentos/Proyectos de Programacion/Compilador_T1/Compilador/src/compilador/Lexer.flex";
+        generarLexer(path);
+    }
+    
+    public static void generarLexer(String path){
+        File file=new File(path);
+        jflex.Main.generate(file);
     }
     
 }
