@@ -7,7 +7,7 @@ import static compilador.Token.*;
 %column
 LETRA = [a-zA-Z]
 DIGITO = [0-9]
-NUMERO = 0 | [1-9][0-9]*
+NUMERO = DIGITO | [1-9]{DIGITO}*
 ELSE = ([eE])([lL])([sS])([eE])
 IF = ("i"|"I")("f"|"F")
 INT = ([Ii])([Nn])([Tt])
@@ -61,12 +61,7 @@ public int columna;
 ";" {lexeme=yytext(); fila=yyline; columna=yycolumn; return PUNTOCOMA;}
 "," {lexeme=yytext(); fila=yyline; columna=yycolumn; return COMA;}
 
-
-
-([A-Z]){LETRA}* {lexeme=yytext(); fila=yyline; columna=yycolumn; return ERROR;}
-([a-z]){LETRA}*{DIGITO}* {lexeme=yytext();  fila=yyline; columna=yycolumn; return ID;}
-("_"){LETRA}+ {lexeme=yytext(); fila=yyline; columna=yycolumn; return ID;}
-("_"){LETRA}+{DIGITO} {lexeme=yytext(); fila=yyline; columna=yycolumn; return ID;}
+([a-z]){LETRA}*_?{LETRA}*{DIGITO}* {lexeme=yytext();  fila=yyline; columna=yycolumn; return ID;}
 {NUMERO} {lexeme=yytext(); fila=yyline; columna=yycolumn; return NUM;}
-"[^]" {lexeme=yytext(); fila=yyline; columna=yycolumn; return ERROR;}
 . {lexeme=yytext(); fila=yyline; columna=yycolumn; return ERROR;}
+
