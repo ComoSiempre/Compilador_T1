@@ -1,0 +1,7 @@
+RESULTADOS DEL ARCHIVO: ejemplo_1.txt
+Simbolo especial COMENTARIO: '%esto es un comentario
+'
+palabra clave INT: 'inT'
+TOKEN ID: 'abc_1' 
+FIN DE ARCHIVO
+------------------------------

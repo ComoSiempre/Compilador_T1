@@ -38,20 +38,21 @@ public int columna;
 {RETURN} {lexeme=yytext(); fila=yyline; columna=yycolumn; return RETURN;}
 {VOID} {lexeme=yytext(); return VOID;}
 {WHILE} {lexeme=yytext(); return WHILE;}
+{FOR} {lexeme=yytext(); return FOR;}
 
 "+" {lexeme=yytext(); fila=yyline; columna=yycolumn; return SUMA;}
 "-" {lexeme=yytext(); fila=yyline; columna=yycolumn; return RESTA;}
 "*" {lexeme=yytext(); fila=yyline; columna=yycolumn; return MULTIPLICACION;}
 "/" {lexeme=yytext(); fila=yyline; columna=yycolumn; return DIVISION;}
-"^" {lexeme=yytext(); fila=yyline; columna=yycolumn; return EXPONIENCIACION_1;}
-"**" {lexeme=yytext(); fila=yyline; columna=yycolumn; return EXPONIENCIACION_2;}
+"^" {lexeme=yytext(); fila=yyline; columna=yycolumn; return EXPONENCIACION_1;}
+"**" {lexeme=yytext(); fila=yyline; columna=yycolumn; return EXPONENCIACION_2;}
 "::=" {lexeme=yytext(); fila=yyline; columna=yycolumn; return ASSIGN;}
-"(" {lexeme=yytext(); fila=yyline; columna=yycolumn; return PARENTHLEFT;}
-")" {lexeme=yytext(); fila=yyline; columna=yycolumn; return PARENTHRIGHT;}
-"[" {lexeme=yytext(); fila=yyline; columna=yycolumn; return BRACKETLEFT;}
-"]" {lexeme=yytext(); fila=yyline; columna=yycolumn; return BRACKETRIGHT;}
-"{" {lexeme=yytext(); fila=yyline; columna=yycolumn; return BRACELEFT;}
-"}" {lexeme=yytext(); fila=yyline; columna=yycolumn; return BRACERIGHT;}
+"(" {lexeme=yytext(); fila=yyline; columna=yycolumn; return PARENT_IZQ;}
+")" {lexeme=yytext(); fila=yyline; columna=yycolumn; return PARENT_DER;}
+"[" {lexeme=yytext(); fila=yyline; columna=yycolumn; return CORCH_IZQ;}
+"]" {lexeme=yytext(); fila=yyline; columna=yycolumn; return CORCH_DER;}
+"{" {lexeme=yytext(); fila=yyline; columna=yycolumn; return LLAVE_IZQ;}
+"}" {lexeme=yytext(); fila=yyline; columna=yycolumn; return LLAVE_DER;}
 "LT" {lexeme=yytext(); fila=yyline; columna=yycolumn; return MENOR;}
 "LEQ" {lexeme=yytext(); fila=yyline; columna=yycolumn; return MENIGUAL;}
 "GT" {lexeme=yytext(); fila=yyline; columna=yycolumn; return MAYOR;}
