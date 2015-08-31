@@ -10,6 +10,6 @@ package compilador;
  * @author Jona
  */
 public enum Token {
-    ELSE, IF, INT, VOID, RETURN, WHILE, FOR, ID, NUM
+    ELSE, IF, INT, VOID, RETURN, WHILE, FOR, ID, NUM, ERROR
     
 }
