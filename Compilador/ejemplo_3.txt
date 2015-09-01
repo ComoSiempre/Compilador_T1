@@ -1,0 +1,2 @@
+%comentario
+inT Abc_1

@@ -20,12 +20,16 @@ public class Compilador {
         String path="E:/Documentos/Proyectos de Programacion/Compilador_T1/Compilador/src/compilador/Lexer.flex";
         String path2="C:/Users/jona/Dropbox/Compiladores (2da vez)/Talleres/Taller 1/Compilador_T1/Compilador/src/compilador/Lexer.flex";
         generarLexer(path2);
-        PrintWriter writer=new PrintWriter(new FileWriter ("resultados.txt"));
-        evaluarEjemplos("ejemplo_1.txt",writer);
-        writer.close();
+        for(int i=0; i<5; i++){
+            PrintWriter writer=new PrintWriter(new FileWriter ("resultado_"+(i+1)+".txt"));
+            evaluarEjemplos("ejemplo_"+(i+1)+".txt",writer);
+            writer.close();
+        }
+    
+        
     }
     
-            
+           
     public static void generarLexer(String path){
         File file=new File(path);
         jflex.Main.generate(file);
@@ -36,7 +40,7 @@ public class Compilador {
         Lexer lexer = new Lexer(reader);
         String resultado = "";
         System.out.println("RESULTADOS DEL ARCHIVO: " + nombreArch);
-        writer.println("RESULTADOS DEL ARCHIVO: " + nombreArch);
+        writer.println("RESULTADOS DEL ARCHIVO: " + nombreArch+"\n");
         while (true) {
             Token token = lexer.yylex();
             if (token == null) {
@@ -44,22 +48,19 @@ public class Compilador {
                 resultado = resultado + "------------------------------";
                 System.out.println(resultado);
                 writer.print(resultado);
-                //writer.println("FIN DE ARCHIVO");
-                //writer.println("------------------------------------");
-                //writer.println("");
                 return;
             }
             switch (token) {
                 case ERROR:
                     resultado = resultado + "Error Lexico, simbolo no reconocido: '" + lexer.lexeme + "'  linea: " + lexer.fila + ", Columna: " + lexer.columna + "\n";
-                    //writer.println("RESPUESTA: Error, simbolo no reconocido: '" + lexer.lexeme+"'");
-                    //writer.println("linea:" + lexer.fila + ", " + "Columna: " + lexer.columna + ";");
-                    break;
+                    System.out.println(resultado);
+                    writer.print(resultado);
+                    return;
+                    
                 case ID:
                 case NUM:
                     resultado = resultado + "TOKEN " + token + ": '" + lexer.lexeme + "' \n";
-                    //writer.println("linea:" + lexer.fila + ", " + "Columna: " + lexer.columna + ";");
-                    //writer.println("<TOKEN " + token + ": '" + lexer.lexeme + "'>");
+                    
                     break;
                 case IF:
                 case VOID:
@@ -68,13 +69,11 @@ public class Compilador {
                 case RETURN:
                 case WHILE:
                     resultado = resultado + "palabra clave " + token + ": '" + lexer.lexeme + "'\n";
-                    //writer.println("linea:" + lexer.fila + ", " + "Columna: " + lexer.columna + ";");
-                    //writer.println("<palabra clave " + token + ": '" + lexer.lexeme + "'>");
+                    
                     break;
                 default:
-                    resultado = resultado + "Simbolo especial " + token + ": '" + lexer.lexeme + "'\n";
-                    //writer.println("linea:" + lexer.fila + ", " + "Columna: " + lexer.columna + ";");
-                    //writer.println("<Simbolo especial " + token + ": '" + lexer.lexeme + "'>");
+                    resultado = resultado + "Simbolo especial " + token + ": '" + lexer.lexeme + "' \n";
+                    
                     break;
             }
         }

@@ -1,0 +1,6 @@
+RESULTADOS DEL ARCHIVO: ejemplo_4.txt
+
+Simbolo especial COMENTARIO: '%comentario
+' 
+palabra clave INT: 'inT'
+Error Lexico, simbolo no reconocido: 'A'  linea: 1, Columna: 4

@@ -1,2 +1,7 @@
-%esto es un comentario
-inT abc_1
+%comentario
+inT abc_1;
+int a_1 ::= 1;
+int ab_C ::= 3;
+iF(a_1 EQ ab_C){
+	abc::=a_1;
+}
