@@ -19,7 +19,7 @@ public class Compilador {
         // TODO code application logic here
         String path="E:/Documentos/Proyectos de Programacion/Compilador_T1/Compilador/src/compilador/Lexer.flex";
         String path2="C:/Users/jona/Dropbox/Compiladores (2da vez)/Talleres/Taller 1/Compilador_T1/Compilador/src/compilador/Lexer.flex";
-        generarLexer(path2);
+        generarLexer(path);
         for(int i=0; i<5; i++){
             PrintWriter writer=new PrintWriter(new FileWriter ("resultado_"+(i+1)+".txt"));
             evaluarEjemplos("ejemplo_"+(i+1)+".txt",writer);
@@ -51,12 +51,12 @@ public class Compilador {
                 return;
             }
             switch (token) {
+                
                 case ERROR:
                     resultado = resultado + "Error Lexico, simbolo no reconocido: '" + lexer.lexeme + "'  linea: " + lexer.fila + ", Columna: " + lexer.columna + "\n";
                     System.out.println(resultado);
                     writer.print(resultado);
                     return;
-                    
                 case ID:
                 case NUM:
                     resultado = resultado + "TOKEN " + token + ": '" + lexer.lexeme + "' \n";

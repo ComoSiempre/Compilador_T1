@@ -20,7 +20,7 @@ SALTO=\n|\r|\r\n /*saltos de linea, que no nos interesa*/
 InputCharacter = [^\r\n] /*cualquier cosa excepto /r/n*/
 ESPACIOS     = {SALTO} | [ \t\f] /*tabulaciones o saltos de linea */
 Commentario = {multiComment} | {lineComment}
-multiComment   = "/#" ~"#/"
+multiComment   = "/#" [^"/#"]"#/"
 lineComment     = "%" {InputCharacter}* {SALTO}?
 
 %{
@@ -29,8 +29,8 @@ public int fila;
 public int columna;
 %}
 %%
-{SALTO} {/*Ignore*/}
-{ESPACIOS} {/*Ignore*/}
+{SALTO} {/*Ignorar*/}
+{ESPACIOS} {/*Ignorar*/}
 {Commentario} {lexeme=yytext(); fila=yyline; columna=yycolumn; return COMENTARIO;}
 {IF} {lexeme=yytext(); fila=yyline; columna=yycolumn; return IF;}
 {INT} {lexeme=yytext(); fila=yyline; columna=yycolumn; return INT;}

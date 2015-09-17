@@ -1,4 +1,7 @@
-%comentario
+/#ddfdfdfdfd 
+hola
+/#OLIWI#/
+a=3#/
 inT abc_1;
 int a_1 ::= 1;
 int ab_C ::= 3;
