@@ -1,7 +1,6 @@
-/#ddfdfdfdfd 
-hola
-/#OLIWI#/
-a=3#/
+/# ejemplo 1
+	%sera un ejemplo simple
+#/
 inT abc_1;
 int a_1 ::= 1;
 int ab_C ::= 3;

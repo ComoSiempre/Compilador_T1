@@ -1,6 +1,11 @@
 RESULTADOS DEL ARCHIVO: ejemplo_5.txt
 
-Simbolo especial COMENTARIO: '%comentario
-' 
-palabra clave INT: 'inT'
-Error Lexico, simbolo no reconocido: 'A'  linea: 1, Columna: 4
+palabra clave INT: 'Int'
+TOKEN ID: 'n' 
+Simbolo especial COMA: ',' 
+TOKEN ID: 'base' 
+Simbolo especial PUNTOCOMA: ';' 
+TOKEN ID: 'base' 
+Simbolo especial ASSIGN: '::=' 
+TOKEN ID: 'tec' 
+Error Lexico, simbolo no reconocido: '.'  linea: 3, Columna: 12

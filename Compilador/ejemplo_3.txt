@@ -1,2 +1,34 @@
-%comentario
-inT Abc_1
+public class listaDoble {
+     private nodo primer,ultimo;
+            public listaDoble() {
+                        primer::=null;
+                       ultimo::=null;
+            }
+
+		    public boolean listaVacia()
+            {
+                        if(primerEQnull || ultimoEQnull)
+                                   return true;
+                        else
+                                   return false;
+            }
+	        public void insertarInicioLista(int entrada)
+            {
+                        nodo nuevo;
+                        nuevo::=new Nodo(entrada);
+                        if(ListaVacia())
+                        {
+                                   primer::=nuevo;
+                                   ultimo::=nuevo;
+                        }
+                        else
+                        {
+                        nuevo.adelante::=primer;
+                        primer.atras::=nuevo;
+                       primer::=nuevo;
+                        }
+                        primer.atras::=null;
+                        ultimo.adelante::=null;
+		    }
+
+}

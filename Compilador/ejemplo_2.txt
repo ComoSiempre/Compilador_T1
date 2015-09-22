@@ -1,2 +1,24 @@
-%comentario
-inT Abc_1
+%este es el ordenamiento burbuja
+inT main () 
+{
+	int aux;
+	int i,j,k; 
+	int n::=10;
+	int a_A[n]; 
+	%comienzo del ordenamiento.
+	for (i::=0;i LT n;i++) 
+	{ 
+		for (j::=0;j LT n-i;j++) 
+		{ 
+			if (a_A[j] GEQ a_A[j+1]) 
+			{ 
+				aux::=a_A[j]; 
+				a_A[j]::=a_A[j+1]; 
+				a_A[j+1]::=aux; 
+			} 
+	
+		} 
+
+	} 
+	
+}

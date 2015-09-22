@@ -7,9 +7,9 @@ import static compilador.Token.*;
 %column
 LETRA = [a-zA-Z]
 DIGITO = [0-9]
-NUMERO = DIGITO | [1-9]{DIGITO}*
+NUMERO = {DIGITO} | [1-9]{DIGITO}*
 ELSE = ([eE])([lL])([sS])([eE])
-IF = ("i"|"I")("f"|"F")
+IF = ([Ii])([Ff])
 INT = ([Ii])([Nn])([Tt])
 VOID = ([vV])([oO])([iI])([dD])
 RETURN = ([rR])([eE])([tT])([uU])([rR])([nN])
@@ -18,10 +18,10 @@ FOR = ([Ff])([Oo])([Rr])
 
 SALTO=\n|\r|\r\n /*saltos de linea, que no nos interesa*/
 InputCharacter = [^\r\n] /*cualquier cosa excepto /r/n*/
+multiComment   = "/#"~"#/"
+lineComment     = "%" {InputCharacter}* {SALTO}?
 ESPACIOS     = {SALTO} | [ \t\f] /*tabulaciones o saltos de linea */
 Commentario = {multiComment} | {lineComment}
-multiComment   = "/#" [^"/#"]"#/"
-lineComment     = "%" {InputCharacter}* {SALTO}?
 
 %{
 public String lexeme;
@@ -31,7 +31,7 @@ public int columna;
 %%
 {SALTO} {/*Ignorar*/}
 {ESPACIOS} {/*Ignorar*/}
-{Commentario} {lexeme=yytext(); fila=yyline; columna=yycolumn; return COMENTARIO;}
+{Commentario} {/*ignorar*/}
 {IF} {lexeme=yytext(); fila=yyline; columna=yycolumn; return IF;}
 {INT} {lexeme=yytext(); fila=yyline; columna=yycolumn; return INT;}
 {ELSE} {lexeme=yytext(); fila=yyline; columna=yycolumn; return ELSE;}

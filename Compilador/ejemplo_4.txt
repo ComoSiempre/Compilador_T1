@@ -1,2 +1,12 @@
-%comentario
-inT Abc_1
+public void ordenar() {
+        for(int k::=0;k LT 4;k++) {
+            for(int f::=0;f LT 4-k;f++) {
+                if (sueldos[f] GT sueldos[f+1]) {
+                    int aux;
+                    aux::=sueldos[f];
+                    sueldos[f]::=sueldos[f+1];
+                    sueldos[f+1]::=aux;
+                }
+            }
+      }
+}

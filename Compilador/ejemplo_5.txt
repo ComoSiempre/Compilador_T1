@@ -1,2 +1,8 @@
-%comentario
-inT Abc_1
+%ejemplo de exponente
+Int n, base;
+%println("Ingrese la base: ");
+base ::= tec.nextInt();
+%println("Ingrese el exponente");
+n ::= tec.nextInt();
+iNt resultado = base^n %(int) Math.pow(base, n);
+%println(base + " elevado a la " + n + " es igual a " + resultado);

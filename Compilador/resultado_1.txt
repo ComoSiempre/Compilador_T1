@@ -1,7 +1,29 @@
 RESULTADOS DEL ARCHIVO: ejemplo_1.txt
 
-Simbolo especial COMENTARIO: '/#ddfdfdfdfd 
-hola
-/#OLIWI#/' 
-TOKEN ID: 'a' 
-Error Lexico, simbolo no reconocido: '='  linea: 3, Columna: 1
+palabra clave INT: 'inT'
+TOKEN ID: 'abc_1' 
+Simbolo especial PUNTOCOMA: ';' 
+palabra clave INT: 'int'
+TOKEN ID: 'a_1' 
+Simbolo especial ASSIGN: '::=' 
+TOKEN NUM: '1' 
+Simbolo especial PUNTOCOMA: ';' 
+palabra clave INT: 'int'
+TOKEN ID: 'ab_C' 
+Simbolo especial ASSIGN: '::=' 
+TOKEN NUM: '3' 
+Simbolo especial PUNTOCOMA: ';' 
+palabra clave IF: 'iF'
+Simbolo especial PARENT_IZQ: '(' 
+TOKEN ID: 'a_1' 
+Simbolo especial IGUALIGUAL: 'EQ' 
+TOKEN ID: 'ab_C' 
+Simbolo especial PARENT_DER: ')' 
+Simbolo especial LLAVE_IZQ: '{' 
+TOKEN ID: 'abc' 
+Simbolo especial ASSIGN: '::=' 
+TOKEN ID: 'a_1' 
+Simbolo especial PUNTOCOMA: ';' 
+Simbolo especial LLAVE_DER: '}' 
+FIN DE ARCHIVO
+------------------------------
