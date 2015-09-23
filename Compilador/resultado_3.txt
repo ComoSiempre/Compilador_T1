@@ -30,7 +30,7 @@ TOKEN ID: 'listaVacia'
 Simbolo especial PARENT_IZQ: '(' 
 Simbolo especial PARENT_DER: ')' 
 Simbolo especial LLAVE_IZQ: '{' 
-palabra clave IF: 'if'
+palabra reservada IF: 'if'
 Simbolo especial PARENT_IZQ: '(' 
 TOKEN ID: 'primerEQnull' 
 Error Lexico, simbolo no reconocido: '|'  linea: 9, Columna: 40

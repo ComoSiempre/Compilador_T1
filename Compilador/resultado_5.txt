@@ -1,6 +1,6 @@
 RESULTADOS DEL ARCHIVO: ejemplo_5.txt
 
-palabra clave INT: 'Int'
+palabra reservada INT: 'Int'
 TOKEN ID: 'n' 
 Simbolo especial COMA: ',' 
 TOKEN ID: 'base' 

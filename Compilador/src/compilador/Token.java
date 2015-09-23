@@ -6,8 +6,10 @@
 package compilador;
 
 /**
- *
- * @author Jona
+ * clase usada para el registro de palabras reservadas en el compilador. 
+ * 
+ * @author Jonathan Vasquez - Eduardo Tapia
+ * 
  */
 public enum Token {
     ELSE, IF, INT, VOID, RETURN, WHILE, FOR, ID, NUM, COMENTARIO,

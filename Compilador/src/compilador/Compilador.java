@@ -6,6 +6,7 @@
 package compilador;
 
 import java.io.*;
+import java.util.Hashtable;
 /**
  * Proyecto correspondiente a la fase de analisis lexico de la implementacion de un compilador
  * para el lenguaje K*, utilizando el analizador lexico JFLEX.
@@ -30,7 +31,7 @@ public class Compilador {
             //variable usada para generar los archovos de resultados.
             PrintWriter writer=new PrintWriter(new FileWriter ("resultado_"+(i+1)+".txt"));
             //llama a la funcion que evalua cada ejemplo.
-            evaluarEjemplos("ejemplo_"+(i+1)+".txt",writer);
+            evaluarEjemplos("ejemplo_"+(i+1)+".txt",writer,i+1);
             //cierro la variable print.
             writer.close();
         }
@@ -53,9 +54,10 @@ public class Compilador {
      * la escritura en archivo.
      * @param nombreArch el nombre del archivo ejemplo.
      * @param writer la variable de escritura de archivo nesesaria la escritura de archivo.
+     * @param numEjemplo el numero del ejemrcicio para la generacion de llave.
      * @throws IOException 
      */
-    public static void evaluarEjemplos(String nombreArch, PrintWriter writer) throws IOException {
+    public static void evaluarEjemplos(String nombreArch, PrintWriter writer,int numEjemplo) throws IOException {
         //variable para la lectura del archivo ejemplo.
         Reader reader = new BufferedReader(new FileReader(nombreArch));
         //genero variable Lexer para la deteccion de tokens
@@ -83,13 +85,19 @@ public class Compilador {
                     //se genera la cadena de error.
                     resultado = resultado + "Error Lexico, simbolo no reconocido: '" + lexer.lexeme + "'  linea: " + lexer.fila + ", Columna: " + lexer.columna + "\n";
                     System.out.println(resultado);
-                    
+                    //se escribure en archivo resultado.
                     writer.print(resultado);
+                    //se deberia eliminar los literales, pero no seria nesesario con la estructura de las llaves.
                     return;
+                    
+                //en caso de que el token analizado es ID o NUM.
                 case ID:
                 case NUM:
+                    //se genera la cadena de token.
                     resultado = resultado + "TOKEN " + token + ": '" + lexer.lexeme + "' \n";
-                    
+                    //condicionante usado para almacenar el literal en la tabla de literales.
+                    if(token.equals(token.NUM))
+                        TablaLiterales.getInstancia().ingresarLiteral(lexer.lexeme,numEjemplo);
                     break;
                 case IF:
                 case VOID:
@@ -97,16 +105,18 @@ public class Compilador {
                 case ELSE:
                 case RETURN:
                 case WHILE:
-                    resultado = resultado + "palabra clave " + token + ": '" + lexer.lexeme + "'\n";
-                    
+                    //se genera la cadena de token de palabra reservada.
+                    resultado = resultado + "palabra reservada " + token + ": '" + lexer.lexeme + "'\n";
                     break;
+                    
                 default:
+                    //se genera la cadena de simbolo especial.
                     resultado = resultado + "Simbolo especial " + token + ": '" + lexer.lexeme + "' \n";
-                    
                     break;
-            }
-        }
-
-    }
+            }//cierre switch
+            
+        }//cierre while
+        
+    }//cierre metodo 'evaluarEjemplos'
     
-}
+}//cierre clase compilador
