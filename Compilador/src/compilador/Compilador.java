@@ -19,12 +19,10 @@ public class Compilador {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws FileNotFoundException, IOException{
-        //direcciones de los archivos .flex (lugares de trabajo donde se desarrollo la aplicacion)
+        //variable donde obtengo la direccion del proyecto.
         final String dir =System.getProperty("user.dir");
-        String pathPC="E:/Documentos/Proyectos de Programacion/Compilador_T1/Compilador/src/compilador/Lexer.flex";
+        //variable usada para guardar la direccion del archivo .flex
         String pathNote=dir+"/src/compilador/Lexer.flex";
-        //"C:/Users/jona/Documents/NetBeansProjects/Compilador_T1/Compilador/src/compilador/Lexer.flex";
-        
         //se llama a la funcion de generacion de lexer. 
         generarLexer(pathNote);
         //ciclo que recorre el testeo para cada ejemplo.
