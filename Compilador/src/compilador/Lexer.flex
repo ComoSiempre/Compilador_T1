@@ -18,10 +18,11 @@ FOR = ([Ff])([Oo])([Rr])
 
 SALTO=\n|\r|\r\n /*saltos de linea, que no nos interesa*/
 InputCharacter = [^\r\n] /*cualquier cosa excepto /r/n*/
-multiComment   = "/#"~"#/"
-lineComment     = "%" {InputCharacter}* {SALTO}?
-ESPACIOS     = {SALTO} | [ \t\f] /*tabulaciones o saltos de linea */
 Commentario = {multiComment} | {lineComment}
+multiComment   = "/#"[^#]~"#/" | "/#" "#"+ "/"  /* "/#"~"#/" */
+lineComment     = "%" {InputCharacter}* {SALTO}?
+ESPACIOS     = {SALTO} | [ \t\f] /*tabulaciones o saltos de linea (whitespace)*/
+
 
 %{
 public String lexeme;
