@@ -23,7 +23,6 @@ multiComment   = "/#"[^#]~"#/" | "/#" "#"+ "/"  /* "/#"~"#/" */
 lineComment     = "%" {InputCharacter}* {SALTO}?
 ESPACIOS     = {SALTO} | [ \t\f] /*tabulaciones o saltos de linea (whitespace)*/
 
-
 %{
 public String lexeme;
 public int fila;
